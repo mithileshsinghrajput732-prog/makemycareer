@@ -1,29 +1,61 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Tuition Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Make My Career - Home Tuition</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
     }
     header {
-      background: #1a73e8;
+      background-color: #1a73e8;
       color: white;
-      padding: 20px;
+      padding: 30px 10px;
+      text-align: center;
     }
     section {
-      padding: 30px;
+      padding: 25px 15px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      margin: 8px 0;
+    }
+    .form-container {
+      background: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
     footer {
-      background: #222;
+      background-color: #222;
       color: white;
-      padding: 10px;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -36,12 +68,49 @@ DOCTYPE html>
   <section>
     <h2>About Us</h2>
     <p>We provide quality education for students of all levels with personalized guidance.</p>
-    <h2>Contact</h2>
-    <p>Email: contact@makemycareer.com</p>
-    <p>Phone: +91-XXXXXXXXXX</p>
+
+    <div class="form-container">
+      <h2>Register for Home Tuition</h2>
+      <form action="https://formspree.io/f/xqkrnkek" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        
+        <label for="class">Select Class:</label>
+        <select name="class" required>
+          <option value="">--Select Class--</option>
+          <option value="1">Class 1</option>
+          <option value="2">Class 2</option>
+          <option value="3">Class 3</option>
+          <option value="4">Class 4</option>
+          <option value="5">Class 5</option>
+          <option value="6">Class 6</option>
+          <option value="7">Class 7</option>
+          <option value="8">Class 8</option>
+          <option value="9">Class 9</option>
+          <option value="10">Class 10</option>
+        </select>
+
+        <label for="board">School Board:</label>
+        <select name="board" required>
+          <option value="">--Select Board--</option>
+          <option value="CBSE">CBSE</option>
+          <option value="ICSE">ICSE</option>
+          <option value="JAC">Jharkhand Academic Council (JAC)</option>
+          <option value="NIOS">NIOS</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <input type="text" name="location" value="Jharkhand, Godda, Mahagama" readonly>
+        <input type="number" name="age" placeholder="Student Age" required>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </section>
 
   <footer>
+    <p>Phone: +91-6207276264 | Email: 7tk5lruitmtjzfigglxgkyyxx@gmail.com</p>
     <p>&copy; 2025 Make My Career. All rights reserved.</p>
   </footer>
 </body>
