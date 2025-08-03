@@ -56,6 +56,11 @@
       cursor: pointer;
       text-decoration: none;
     }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
     footer {
       background: #222;
       color: #ccc;
@@ -100,7 +105,13 @@
     <p>We believe in results. Our students show visible improvements in grades and confidence.</p>
   </div>
 
-  <a class="form-button" href="form.html">📋 Fill the Form for Home Tuition</a>
+  <a class="form-button" href="#form">📋 Fill the Form for Home Tuition</a>
+
+  <!-- Embedded Form -->
+  <div id="form" class="section">
+    <h2>Home Tuition Registration Form</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeX_VHAAav4QWhzPzkMGzckbb4Pa0rsmSjqPUhZrf8NEqOMTA/viewform?embedded=true">Loading…</iframe>
+  </div>
 
   <footer>
     <h3>About Us</h3>
