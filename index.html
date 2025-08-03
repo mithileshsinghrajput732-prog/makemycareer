@@ -1,143 +1,168 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Make My Career - Home Tuition</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fbff;
-      color: #222;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8fbff;
+      color: #333;
     }
     header {
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      background-color: #1a73e8;
       color: white;
+      padding: 30px 10px;
       text-align: center;
-      padding: 1rem 0;
     }
     .slider {
-      position: relative;
       width: 100%;
-      height: 400px;
+      max-height: 500px;
       overflow: hidden;
+      position: relative;
     }
     .slides {
       display: flex;
       width: 400%;
-      animation: slide 20s infinite;
+      animation: slide 12s infinite;
     }
     .slides img {
       width: 100%;
-      height: 400px;
+      height: auto;
       object-fit: cover;
     }
     @keyframes slide {
-      0% { transform: translateX(0); }
+      0% { transform: translateX(0%); }
       25% { transform: translateX(-100%); }
       50% { transform: translateX(-200%); }
       75% { transform: translateX(-300%); }
-      100% { transform: translateX(0); }
+      100% { transform: translateX(0%); }
     }
     section {
-      padding: 2rem;
-      text-align: center;
-    }
-    .highlight {
-      background-color: #e3f2fd;
-      border-radius: 10px;
-      padding: 2rem;
-      margin: 1rem auto;
-      max-width: 900px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    form {
-      max-width: 600px;
+      padding: 30px 15px;
+      max-width: 1000px;
       margin: auto;
-      background: #fff3cd;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    form input, form select {
+    .info-section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+    .form-section {
+      background: #e3f2fd;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+    input, select {
       width: 100%;
       padding: 10px;
-      margin: 0.5rem 0;
-      border-radius: 5px;
+      border-radius: 6px;
       border: 1px solid #ccc;
+      margin-top: 5px;
     }
-    form button {
-      background-color: #4e54c8;
+    button {
+      background-color: #1a73e8;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 16px;
+      margin-top: 20px;
       cursor: pointer;
     }
     footer {
-      background-color: #1e1e1e;
-      color: #fff;
-      padding: 2rem;
+      background-color: #222;
+      color: white;
       text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
-<body><header>
-  <h1>MAKE MY CAREER</h1>
-  <p>Trusted Home Tuition in Mahagama, Godda, Jharkhand</p>
-</header><div class="slider">
-  <div class="slides">
-    <img src="IMAGE1.jpg" alt="Slide 1">
-    <img src="IMAGE2.jpg" alt="Slide 2">
-    <img src="IMAGE3.jpg" alt="Slide 3">
-    <img src="IMAGE4.jpg" alt="Slide 4">
-  </div>
-</div><section class="highlight">
-  <h2>Our Mission</h2>
-  <p>We aim to provide high-quality home tuition tailored to each student’s learning pace and style. Helping students from Class 1 to 10 build a strong academic foundation for a bright future.</p>
-</section><section class="highlight">
-  <h2>What We Offer</h2>
-  <ul>
-    <li>One-on-one home tuition in Mahagama, Godda</li>
-    <li>Boards covered: CBSE, ICSE, JAC</li>
-    <li>All subjects for Class 1 to 10</li>
-    <li>Friendly, experienced tutors</li>
-  </ul>
-</section><section class="highlight">
-  <h2>Benefits of Home Tuition</h2>
-  <p>✓ Personal attention<br>
-     ✓ Flexible timing<br>
-     ✓ Learning at student’s pace<br>
-     ✓ Safer learning environment at home</p>
-</section><section class="highlight">
-  <h2>Why Choose Make My Career?</h2>
-  <p>Focused on home tuition only, not coaching. Trusted by many parents in Godda & Mahagama. Caring and supportive tutors with consistent communication.</p>
-</section><section>
-  <h2 style="color: #2e7d32">Fill the Form for Home Tuition</h2>
-  <form>
-    <input type="text" placeholder="Student Name" required>
-    <input type="number" placeholder="Age" required>
-    <select required>
+<body>
+  <header>
+    <h1>Make My Career</h1>
+    <p>Your Trusted Home Tuition Partner - Mahagama, Godda, Jharkhand</p>
+  </header>  <div class="slider">
+    <div class="slides">
+      <img src="image1.jpg" alt="Slide 1" />
+      <img src="image2.jpg" alt="Slide 2" />
+      <img src="image3.jpg" alt="Slide 3" />
+      <img src="image4.jpg" alt="Slide 4" />
+    </div>
+  </div>  <section>
+    <div class="info-section">
+      <h2>Our Mission</h2>
+      <p>We strive to bring quality home tuition to every doorstep in Mahagama. Helping students reach their full potential is our mission.</p>
+    </div>
+    <div class="info-section">
+      <h2>Personalized Learning</h2>
+      <p>Our tutors tailor lessons according to each student's learning speed, style, and needs for better understanding.</p>
+    </div>
+    <div class="info-section">
+      <h2>Trusted & Verified Tutors</h2>
+      <p>We connect you with highly trusted and experienced tutors from your local area to ensure safety and excellence.</p>
+    </div>
+    <div class="info-section">
+      <h2>Convenient Scheduling</h2>
+      <p>Choose the tuition timing that suits your child’s school hours and home routine. Flexibility guaranteed!</p>
+    </div>
+    <div class="info-section">
+      <h2>Why Choose Us?</h2>
+      <p>✔️ Home Tuition Only (Not Coaching)<br>
+         ✔️ CBSE / ICSE / JAC Boards Covered<br>
+         ✔️ One-on-One Attention<br>
+         ✔️ Mahagama-based Local Tutors</p>
+    </div><div class="form-section">
+  <h2>Fill the Form for Home Tuition</h2>
+  <form action="https://formsubmit.co/makemycarrer108@gmail.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://mithileshsinghrajput732-prog.github.io/makemycareer/thankyou.html">
+
+    <label for="name">Student Name</label>
+    <input type="text" id="name" name="Student Name" required>
+
+    <label for="age">Student Age</label>
+    <input type="number" id="age" name="Student Age" required>
+
+    <label for="class">Class</label>
+    <select id="class" name="Class" required>
       <option value="">Select Class</option>
-      <option>1</option><option>2</option><option>3</option>
-      <option>4</option><option>5</option><option>6</option>
-      <option>7</option><option>8</option><option>9</option>
-      <option>10</option>
+      <option>1</option><option>2</option><option>3</option><option>4</option>
+      <option>5</option><option>6</option><option>7</option><option>8</option>
+      <option>9</option><option>10</option>
     </select>
-    <select required>
+
+    <label for="board">School Board</label>
+    <select id="board" name="Board" required>
       <option value="">Select Board</option>
       <option>CBSE</option>
       <option>ICSE</option>
       <option>JAC</option>
     </select>
-    <input type="text" value="Mahagama, Godda, Jharkhand" disabled>
-    <input type="tel" placeholder="Contact Number" required>
-    <input type="email" placeholder="Email Address" required>
-    <button type="submit">Submit</button>
+
+    <button type="submit">Submit Request</button>
   </form>
-</section><footer>
-  <p>Contact us: 6207276264 | makemycarrer108@gmail.com</p>
-  <p>&copy; 2025 Make My Career. All rights reserved.</p>
-</footer></body>
-</html>
+</div>
+
+  </section>  <footer>
+    <p>Contact: 6207276264 | makemycarrer108@gmail.com</p>
+    <p>Location: Mahagama, Godda, Jharkhand</p>
+    <p>&copy; 2025 Make My Career. All rights reserved.</p>
+  </footer>
+</body>
+        </html>        
