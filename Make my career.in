@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make My Career - Business Education for Students</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #003060;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .hero {
+      padding: 60px 20px;
+      background: #cce0ff;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .section {
+      padding: 40px 20px;
+      background: white;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .footer {
+      background: #003060;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    button {
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Make My Career</h1>
+    <p>Your Gateway to Free Business Education</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#topics">Topics</a>
+    <a href="#resources">Resources</a>
+    <a href="#home-tuition">Home Tuition</a>
+    <a href="#login">Login</a>
+    <a href="#signup">Signup</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Empowering Students to Succeed</h1>
+    <p>Learn business skills, soft skills, finance, and more – all for free!</p>
+    <button onclick="location.href='#signup'">Get Started</button>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Make My Career</h2>
+    <p>We are dedicated to helping students build their careers through free, high-quality education in business, entrepreneurship, and life skills.</p>
+  </section>
+
+  <section id="topics" class="section">
+    <h2>What You Will Learn</h2>
+    <ul>
+      <li>Marketing & Branding Basics</li>
+      <li>Financial Literacy for Students</li>
+      <li>Entrepreneurship & Startups</li>
+      <li>Communication & Soft Skills</li>
+    </ul>
+  </section>
+
+  <section id="resources" class="section">
+    <h2>Free Resources</h2>
+    <p>Explore our blog, videos, and guides – no payment required!</p>
+  </section>
+
+  <section id="home-tuition" class="section">
+    <h2>Home Tuition (Open Now)</h2>
+    <p><strong>Available for students in Mahagama, Godda (Jharkhand)</strong>. Please fill the form below to enroll for home tuition:</p>
+    <form>
+      <input type="text" name="student_name" placeholder="Student Name" required />
+      <input type="email" name="gmail" placeholder="Gmail Address" required />
+      <input type="number" name="age" placeholder="Age" min="5" max="20" required />
+      <select name="class">
+        <option value="">Select Class</option>
+        <option value="1">Class 1</option>
+        <option value="2">Class 2</option>
+        <option value="3">Class 3</option>
+        <option value="4">Class 4</option>
+        <option value="5">Class 5</option>
+        <option value="6">Class 6</option>
+        <option value="7">Class 7</option>
+        <option value="8">Class 8</option>
+        <option value="9">Class 9</option>
+        <option value="10">Class 10</option>
+      </select>
+      <input type="text" name="school" placeholder="School Name" required />
+      <input type="text" name="board" placeholder="School Board (e.g., CBSE, JAC)" required />
+      <input type="tel" name="contact" placeholder="Contact Number" required />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="login" class="section">
+    <h2>Login</h2>
+    <p>Already a member? <a href="#">Click here to login</a>.</p>
+  </section>
+
+  <section id="signup" class="section">
+    <h2>Sign Up</h2>
+    <p>New here? <a href="#">Click here to create your free account</a>.</p>
+  </section>
+
+  <div class="footer">
+    <p>&copy; 2025 Make My Career | Empowering Students for a Better Future</p>
+  </div>
+</body>
+</html>
