@@ -3,254 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Tuition Form</title>
+  <title>Home Tuition Form - Make My Career</title>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("3jXWXqUJgsCpbPU5i"); // ✅ Your real public key
+    })();
+  </script>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    html, body {
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
       margin: 0;
-      padding: 0;
-      height: 100%;
+      padding: 20px;
     }
-
-    #login-screen, #form-screen {
-      position: absolute;
-      top: 0; left: 0;
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input, select {
       width: 100%;
-      height: 100%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-size: cover;
-      background-position: center;
-    }
-
-    #login-screen {
-      display: flex;
-      background-image: url('images/login-bg.jpg');
-    }
-
-    #form-screen {
-      background-image: url('images/form-background.jpg');
-    }
-
-    .container {
-      background: rgba(255,255,255,0.95);
-      padding: 2rem;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      border-radius: 6px;
+      padding: 10px;
+      margin: 10px 0 20px;
       border: 1px solid #ccc;
+      border-radius: 6px;
     }
-
     button {
-      background-color: #004080;
+      background-color: #007bff;
       color: white;
       border: none;
+      padding: 12px;
+      border-radius: 6px;
       cursor: pointer;
+      width: 100%;
     }
-
-    h2 {
-      color: #003366;
+    button:hover {
+      background-color: #0056b3;
     }
-
-    .success-message {
-      margin-top: 1rem;
+    .success {
+      text-align: center;
       color: green;
+      font-weight: bold;
+      margin-top: 20px;
       display: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Login screen -->
-  <div id="login-screen">
-    <div class="container">
-      <h2>Sign in with your<br>Google Account</h2>
-      <button onclick="handleCredentialResponse()">Sign in with Google</button>
-    </div>
-  </div>
-
-  <!-- Form screen -->
-  <div id="form-screen">
-    <div class="container">
-      <h2>Fill the Form for<br>Home Tuition</h2>
-      <form id="tuitionForm">
-        <input type="text" placeholder="Student Name" required />
-        <input type="number" placeholder="Age" required />
-        <input type="text" placeholder="Class (1 to 10)" required />
-        <select required>
-          <option value="">Select Board</option>
-          <option value="CBSE">CBSE</option>
-          <option value="ICSE">ICSE</option>
-          <option value="JAC">JAC</option>
-        </select>
-        <input type="tel" placeholder="Phone Number" required />
-        <input type="email" placeholder="Email" required />
-        <button type="submit">Submit</button>
-      </form>
-      <div class="success-message" id="successMsg">Successfully Filled!</div>
-    </div>
+  <div class="form-container">
+    <h2>Fill the Form for Home Tuition</h2>
+    <form id="tuitionForm">
+      <input type="text" id="student_name" name="student_name" placeholder="Student Name" required />
+      <input type="number" id="age" name="age" placeholder="Age" required />
+      <select id="class" name="class" required>
+        <option value="">Select Class</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+      </select>
+      <select id="board" name="board" required>
+        <option value="">Select Board</option>
+        <option>CBSE</option>
+        <option>ICSE</option>
+        <option>JAC</option>
+      </select>
+      <input type="text" id="phone" name="phone" placeholder="Phone Number" required />
+      <input type="email" id="email" name="email" placeholder="Email Address" required />
+      <button type="submit">Submit</button>
+    </form>
+    <div class="success" id="successMessage">Successfully Filled ✅</div>
   </div>
 
   <script>
-    window.onload = function () {
-      document.getElementById("login-screen").style.display = "flex";
-      document.getElementById("form-screen").style.display = "none";
+    document.getElementById('tuitionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-      window.handleCredentialResponse = function () {
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("form-screen").style.display = "flex";
-      };
-
-      document.getElementById("tuitionForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        document.getElementById("successMsg").style.display = "block";
+      emailjs.send("service_xxx", "template_yyy", {
+        student_name: document.getElementById("student_name").value,
+        age: document.getElementById("age").value,
+        class: document.getElementById("class").value,
+        board: document.getElementById("board").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value
+      })
+      .then(function(response) {
+        document.getElementById("successMessage").style.display = "block";
+        document.getElementById("tuitionForm").reset();
+      }, function(error) {
+        alert("Error: " + error.text);
       });
-    };
+    });
   </script>
+
 </body>
-         </html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Tuition Form</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
-    #login-screen, #form-screen {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-size: cover;
-      background-position: center;
-    }
-
-    #login-screen {
-      display: flex;
-      background-image: url('images/login-bg.jpg');
-    }
-
-    #form-screen {
-      background-image: url('images/form-background.jpg');
-    }
-
-    .container {
-      background: rgba(255,255,255,0.95);
-      padding: 2rem;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-
-    input, select, button {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #004080;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    h2 {
-      color: #003366;
-    }
-
-    .success-message {
-      margin-top: 1rem;
-      color: green;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Login screen -->
-  <div id="login-screen">
-    <div class="container">
-      <h2>Sign in with your<br>Google Account</h2>
-      <button onclick="handleCredentialResponse()">Sign in with Google</button>
-    </div>
-  </div>
-
-  <!-- Form screen -->
-  <div id="form-screen">
-    <div class="container">
-      <h2>Fill the Form for<br>Home Tuition</h2>
-      <form id="tuitionForm">
-        <input type="text" placeholder="Student Name" required />
-        <input type="number" placeholder="Age" required />
-        <input type="text" placeholder="Class (1 to 10)" required />
-        <select required>
-          <option value="">Select Board</option>
-          <option value="CBSE">CBSE</option>
-          <option value="ICSE">ICSE</option>
-          <option value="JAC">JAC</option>
-        </select>
-        <input type="tel" placeholder="Phone Number" required />
-        <input type="email" placeholder="Email" required />
-        <button type="submit">Submit</button>
-      </form>
-      <div class="success-message" id="successMsg">Successfully Filled!</div>
-    </div>
-  </div>
-
-  <script>
-    window.onload = function () {
-      document.getElementById("login-screen").style.display = "flex";
-      document.getElementById("form-screen").style.display = "none";
-
-      window.handleCredentialResponse = function () {
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("form-screen").style.display = "flex";
-      };
-
-      document.getElementById("tuitionForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        document.getElementById("successMsg").style.display = "block";
-      });
-    };
-  </script>
-</body>
-</html>
-images/
-├── login-bg.jpg           ← background for login screen
-└── form-background.jpg    ← background for form screen
+        </html>
