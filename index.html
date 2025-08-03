@@ -1,117 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Make My Career - Home Tuition</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbff;
+      color: #222;
     }
     header {
-      background-color: #1a73e8;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
       color: white;
-      padding: 30px 10px;
       text-align: center;
+      padding: 1rem 0;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 20s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      100% { transform: translateX(0); }
     }
     section {
-      padding: 25px 15px;
-      max-width: 800px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .highlight {
+      background-color: #e3f2fd;
+      border-radius: 10px;
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 900px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    form {
+      max-width: 600px;
       margin: auto;
+      background: #fff3cd;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h1, h2 {
-      margin-bottom: 10px;
-    }
-    p {
-      margin: 8px 0;
-    }
-    .form-container {
-      background: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, select {
+    form input, form select {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
+      margin: 0.5rem 0;
+      border-radius: 5px;
       border: 1px solid #ccc;
-      border-radius: 4px;
     }
-    button {
-      background-color: #1a73e8;
+    form button {
+      background-color: #4e54c8;
       color: white;
       padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
     }
     footer {
-      background-color: #222;
-      color: white;
+      background-color: #1e1e1e;
+      color: #fff;
+      padding: 2rem;
       text-align: center;
-      padding: 15px;
-      margin-top: 30px;
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Welcome to Make My Career</h1>
-    <p>Your trusted tuition partner</p>
-  </header>
-
-  <section>
-    <h2>About Us</h2>
-    <p>We provide quality education for students of all levels with personalized guidance.</p>
-
-    <div class="form-container">
-      <h2>Register for Home Tuition</h2>
-      <form action="https://formspree.io/f/xqkrnkek" method="POST">
-        <input type="text" name="name" placeholder="Your Full Name" required>
-        <input type="email" name="email" placeholder="Your Email Address" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-        
-        <label for="class">Select Class:</label>
-        <select name="class" required>
-          <option value="">--Select Class--</option>
-          <option value="1">Class 1</option>
-          <option value="2">Class 2</option>
-          <option value="3">Class 3</option>
-          <option value="4">Class 4</option>
-          <option value="5">Class 5</option>
-          <option value="6">Class 6</option>
-          <option value="7">Class 7</option>
-          <option value="8">Class 8</option>
-          <option value="9">Class 9</option>
-          <option value="10">Class 10</option>
-        </select>
-
-        <label for="board">School Board:</label>
-        <select name="board" required>
-          <option value="">--Select Board--</option>
-          <option value="CBSE">CBSE</option>
-          <option value="ICSE">ICSE</option>
-          <option value="JAC">Jharkhand Academic Council (JAC)</option>
-          <option value="NIOS">NIOS</option>
-          <option value="Other">Other</option>
-        </select>
-
-        <input type="text" name="location" value="Jharkhand, Godda, Mahagama" readonly>
-        <input type="number" name="age" placeholder="Student Age" required>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>Phone: +91-6207276264 | Email: 7tk5lruitmtjzfigglxgkyyxx@gmail.com</p>
-    <p>&copy; 2025 Make My Career. All rights reserved.</p>
-  </footer>
-</body>
+<body><header>
+  <h1>MAKE MY CAREER</h1>
+  <p>Trusted Home Tuition in Mahagama, Godda, Jharkhand</p>
+</header><div class="slider">
+  <div class="slides">
+    <img src="IMAGE1.jpg" alt="Slide 1">
+    <img src="IMAGE2.jpg" alt="Slide 2">
+    <img src="IMAGE3.jpg" alt="Slide 3">
+    <img src="IMAGE4.jpg" alt="Slide 4">
+  </div>
+</div><section class="highlight">
+  <h2>Our Mission</h2>
+  <p>We aim to provide high-quality home tuition tailored to each student’s learning pace and style. Helping students from Class 1 to 10 build a strong academic foundation for a bright future.</p>
+</section><section class="highlight">
+  <h2>What We Offer</h2>
+  <ul>
+    <li>One-on-one home tuition in Mahagama, Godda</li>
+    <li>Boards covered: CBSE, ICSE, JAC</li>
+    <li>All subjects for Class 1 to 10</li>
+    <li>Friendly, experienced tutors</li>
+  </ul>
+</section><section class="highlight">
+  <h2>Benefits of Home Tuition</h2>
+  <p>✓ Personal attention<br>
+     ✓ Flexible timing<br>
+     ✓ Learning at student’s pace<br>
+     ✓ Safer learning environment at home</p>
+</section><section class="highlight">
+  <h2>Why Choose Make My Career?</h2>
+  <p>Focused on home tuition only, not coaching. Trusted by many parents in Godda & Mahagama. Caring and supportive tutors with consistent communication.</p>
+</section><section>
+  <h2 style="color: #2e7d32">Fill the Form for Home Tuition</h2>
+  <form>
+    <input type="text" placeholder="Student Name" required>
+    <input type="number" placeholder="Age" required>
+    <select required>
+      <option value="">Select Class</option>
+      <option>1</option><option>2</option><option>3</option>
+      <option>4</option><option>5</option><option>6</option>
+      <option>7</option><option>8</option><option>9</option>
+      <option>10</option>
+    </select>
+    <select required>
+      <option value="">Select Board</option>
+      <option>CBSE</option>
+      <option>ICSE</option>
+      <option>JAC</option>
+    </select>
+    <input type="text" value="Mahagama, Godda, Jharkhand" disabled>
+    <input type="tel" placeholder="Contact Number" required>
+    <input type="email" placeholder="Email Address" required>
+    <button type="submit">Submit</button>
+  </form>
+</section><footer>
+  <p>Contact us: 6207276264 | makemycarrer108@gmail.com</p>
+  <p>&copy; 2025 Make My Career. All rights reserved.</p>
+</footer></body>
 </html>
