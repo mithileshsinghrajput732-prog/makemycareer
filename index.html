@@ -1,144 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <title>Make My Career – Home Tuition</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
 
-    #login-screen, #form-screen {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
+  #login-screen, #form-screen {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    #login-screen {
-      background: url('images/login-bg.jpg') no-repeat center center/cover;
-      display: flex;
-    }
+  #login-screen {
+    display: flex;
+    background: url('images/login-bg.jpg') no-repeat center center/cover;
+  }
 
-    #form-screen {
-      background: url('images/form-background.jpg') no-repeat center center/cover;
-    }
+  .container {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
 
-    .container {
-      background: rgba(255,255,255,0.9);
-      padding: 2rem;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
+  input, select, button {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
 
-    input, select, button {
-      width: 100%;
-      padding: 0.75rem;
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+  button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 
-    button {
-      background-color: #004080;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+  h2 {
+    color: #003366;
+  }
 
-    .success-message {
-      margin-top: 1rem;
-      color: green;
-      display: none;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: #003366;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ✅ LOGIN SCREEN -->
-  <div id="login-screen">
-    <div class="container">
-      <h2>Sign in with Google</h2>
-      <div id="g_id_onload"
-          data-client_id="YOUR_GOOGLE_CLIENT_ID"
-          data-context="signin"
-          data-callback="handleCredentialResponse"
-          data-auto_prompt="false">
-      </div>
-      <div class="g_id_signin"
-          data-type="standard"
-          data-theme="outline"
-          data-text="sign_in_with"
-          data-size="large"
-          data-logo_alignment="left">
-      </div>
-    </div>
-  </div>
-
-  <!-- ✅ FORM SCREEN -->
-  <div id="form-screen">
-    <div class="container">
-      <h2>Fill Form for Home Tuition</h2>
-      <form id="tuitionForm">
-        <input type="text" placeholder="Student Name" required>
-        <input type="number" placeholder="Age" required>
-        <input type="text" placeholder="Class (1–10)" required>
-        <select required>
-          <option value="">Select Board</option>
-          <option value="CBSE">CBSE</option>
-          <option value="ICSE">ICSE</option>
-          <option value="JAC">JAC</option>
-        </select>
-        <input type="tel" placeholder="Phone Number" required>
-        <input type="email" placeholder="Email" required>
-        <button type="submit">Submit</button>
-      </form>
-      <div class="success-message" id="successMsg">Successfully Filled ✅</div>
-    </div>
-  </div>
-
-  <script>
-    // Initially show login screen
+  .success-message {
+    margin-top: 1rem;
+    color: green;
+    display: none;
+  }
+    </style>
+    <script>
+  window.onload = function() {
     document.getElementById("login-screen").style.display = "flex";
+    document.getElementById("form-screen").style.display = "none";
+  }
 
-    function handleCredentialResponse(response) {
-      // Google login successful
-      document.getElementById("login-screen").style.display = "none";
-      document.getElementById("form-screen").style.display = "flex";
-    }
+  function handleCredentialResponse(response) {
+    // Google login successful
+    document.getElementById("login-screen").style.display = "none";
+    document.getElementById("form-screen").style.display = "flex";
+  }
 
-    // Handle form submission
-    document.getElementById("tuitionForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      document.getElementById("successMsg").style.display = "block";
-    });
-  </script>
-</body>
-</html>
-makemycareer/
-├── index.html
-└── images/
-    ├── login-bg.jpg
-    └── form-background.jpg
+  document.getElementById("tuitionForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+  });
+    </script>
+    <meta name="theme-color" content="#ffffff">
