@@ -1,103 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Tuition Form - Make My Career</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make My Career</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("3jXWXqUJgsCpbPU5i"); // ✅ Your real public key
-    })();
-  </script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
-      margin: 0;
-      padding: 20px;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+    header, section, footer { padding: 20px; text-align: center; }
+    .slider { position: relative; overflow: hidden; height: 400px; }
+    .slides { display: flex; width: 400%; animation: slide 20s infinite; }
+    .slides img { width: 100vw; height: 400px; object-fit: cover; }
+    .overlay-title {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      color: white; font-size: 3rem; font-weight: bold; text-shadow: 2px 2px 10px #000;
     }
-    .form-container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    @keyframes slide {
+      0% { margin-left: 0; }
+      20% { margin-left: 0; }
+      25% { margin-left: -100vw; }
+      45% { margin-left: -100vw; }
+      50% { margin-left: -200vw; }
+      70% { margin-left: -200vw; }
+      75% { margin-left: -300vw; }
+      95% { margin-left: -300vw; }
+      100% { margin-left: 0; }
     }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0 20px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .success {
-      text-align: center;
-      color: green;
-      font-weight: bold;
-      margin-top: 20px;
-      display: none;
-    }
+    .section-title { font-size: 2rem; margin: 40px 0 20px; }
+    .info-section { background: #f0f8ff; padding: 30px 15px; border-bottom: 1px solid #ccc; }
+    .form-section { background: url('https://via.placeholder.com/1600x800') center/cover no-repeat; padding: 40px 20px; }
+    form { background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; }
+    input, select { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+    button { padding: 12px 20px; background: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    footer { background: #222; color: white; }
+    .contact p { margin: 5px 0; }
   </style>
 </head>
 <body>
-
-  <div class="form-container">
-    <h2>Fill the Form for Home Tuition</h2>
-    <form id="tuitionForm">
-      <input type="text" id="student_name" name="student_name" placeholder="Student Name" required />
-      <input type="number" id="age" name="age" placeholder="Age" required />
-      <select id="class" name="class" required>
-        <option value="">Select Class</option>
-        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-        <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
-      </select>
-      <select id="board" name="board" required>
-        <option value="">Select Board</option>
-        <option>CBSE</option>
-        <option>ICSE</option>
-        <option>JAC</option>
-      </select>
-      <input type="text" id="phone" name="phone" placeholder="Phone Number" required />
-      <input type="email" id="email" name="email" placeholder="Email Address" required />
-      <button type="submit">Submit</button>
-    </form>
-    <div class="success" id="successMessage">Successfully Filled ✅</div>
+  <!-- Google Sign-In -->
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="true">
   </div>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+  </div>  <!-- Main Content -->  <div id="mainContent" style="display: none;">
+    <div class="slider">
+      <div class="slides">
+        <img src="image1.jpg" />
+        <img src="image2.jpg" />
+        <img src="image3.jpg" />
+        <img src="image4.jpg" />
+      </div>
+      <div class="overlay-title">Make My Career</div>
+    </div><section class="
 
-  <script>
-    document.getElementById('tuitionForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      emailjs.send("service_xxx", "template_yyy", {
-        student_name: document.getElementById("student_name").value,
-        age: document.getElementById("age").value,
-        class: document.getElementById("class").value,
-        board: document.getElementById("board").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value
-      })
-      .then(function(response) {
-        document.getElementById("successMessage").style.display = "block";
-        document.getElementById("tuitionForm").reset();
-      }, function(error) {
-        alert("Error: " + error.text);
-      });
-    });
-  </script>
-
-</body>
-        </html>
+            
